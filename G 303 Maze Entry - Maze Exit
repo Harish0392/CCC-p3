@@ -1,0 +1,15 @@
+n = int(input())
+edges = list(map(int, input().split()))
+
+in_degrees = [0] * n
+
+# Count incoming edges for each cell
+for i in range(n):
+    if edges[i] != -1:
+        in_degrees[edges[i]] += 1
+
+# Find the cell with maximum incoming edges
+max_in_degrees = max(in_degrees)
+max_in_degrees_index = in_degrees.index(max_in_degrees)
+
+print(max_in_degrees_index)
